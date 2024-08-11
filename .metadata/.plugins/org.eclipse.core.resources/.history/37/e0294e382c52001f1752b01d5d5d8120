@@ -1,0 +1,35 @@
+package inventoryModel;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Item {
+	//private int itemid;
+	private String name;
+	private Long  totalQuantity;
+	
+	List<Inventory> inventery = new ArrayList<>();
+	
+	public List<Inventory> getInventery() {
+		return inventery;
+	}
+	public void setInventery(List<Inventory> inventery) {
+		this.inventery = inventery;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public Long getTotalQuantity() {
+		return totalQuantity;
+	}
+	public void setTotalQuantity(Long quantity) {
+		this.totalQuantity = quantity;
+	}
+	
+
+}

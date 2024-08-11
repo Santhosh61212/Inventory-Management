@@ -1,0 +1,48 @@
+package inventoryService;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import inventoryModel.Inventory;
+import inventoryModel.Item;
+
+public class InventoryService {
+	private static Long invid = 0L;
+	Inventory inv = new Inventory();
+	Item itm = new Item();
+	
+	List<Item> item = new ArrayList<>();
+	List<Inventory> inventory = new ArrayList<>();
+	
+	public void createItem(Scanner sc) {
+		System.out.println("Enter Item Name : ");
+		itm.setName(sc.next());
+		System.out.println("Enter Item Price : ");
+		itm.setPrice(sc.nextLong());
+		
+		item.add(itm);
+	}
+	
+	public void createInventory(Scanner sc) {
+		System.out.println("Enter Inventory Name : ");
+		inv.setName(sc.next());
+		inv.setInventoryId(++invid);
+		
+		inventory.add(inv);
+	}
+	
+	public void addItemsInInventory(Scanner sc) {
+		System.out.println("Inventory Detail");
+		for(Inventory invt : inventory) {
+			System.out.println(invt.getName());		
+		}
+		System.out.println("Please choose the Inventory");
+		String invtValue = sc.next();
+		
+		for(Inventory invt : inventory) {
+			if(invt)
+			
+		}
+	}
+}

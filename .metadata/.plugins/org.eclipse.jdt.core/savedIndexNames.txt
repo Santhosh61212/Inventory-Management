@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+G:\Projects\Inventory_management\.metadata\.plugins\org.eclipse.jdt.core
+3053730292.index
+1865797976.index
+2864004647.index

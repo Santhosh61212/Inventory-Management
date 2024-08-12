@@ -74,12 +74,15 @@ public class InventoryService {
 						
 						//to set the items detail in Inventory
 						//List<Item> item = invt.getItem();
+						invt.getItem().add(itemobj);
 						
-						for(List<Item> item : invt.getItem()) {
-							item.add(itemobj);
-							invt.setItem(item);
-							invt.setQuantity();
-						}
+						
+						Inventory invent = new Inventory();
+						invent.setInventoryId(invt.getInventoryId());
+						invent.setName(invt.getName());
+						invent.setQuantity(Quantity);
+						
+						itm.getInventery().add(invent);
 						
 						
 					}
@@ -120,5 +123,22 @@ public class InventoryService {
 		System.out.println("Enter the Item Value");
 		
 		
+	}
+	
+	public void getInventoryById(Long id) {
+		for (Inventory inv : inventory ) {
+			if(inv.getInventoryId().equals(id)) {
+				System.out.println("Inventory detail");
+				System.out.println("Inventory Id : " + inv.getInventoryId());
+				System.out.println("Inventory Name : " + inv.getName());
+				for(Item itm : inv.getItem()) {
+					System.out.println("Item Id : " + itm.getItemId());
+					System.out.println("Item Name : " + itm.getName());
+					System.out.println("Item : " + itm.getQuantity());
+				}
+				
+			}
+			
+		}
 	}
 }

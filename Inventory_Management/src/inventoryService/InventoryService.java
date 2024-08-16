@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import InventoryDAO.InventoryDAO;
 import inventoryModel.Inventory;
 import inventoryModel.Item;
 
 public class InventoryService {
 	private static Long invid = 0L;
-	private static Long itmId = 0L;
+	private static int itmId = 0;
 	
 	List<Item> item = new ArrayList<>();
 	List<Inventory> inventory = new ArrayList<>();
@@ -30,6 +31,9 @@ public class InventoryService {
 		itm.setPrice(sc.nextLong());
 		itm.setItemId(++itmId);
 		
+		InventoryDAO invDao = new InventoryDAO(); 
+		
+		invDao.createItem(itm);
 		item.add(itm);
 	}
 	
@@ -74,10 +78,10 @@ public class InventoryService {
 			getItems();
 			
 			System.out.println("please Enter the Item Id");
-			Long itmValue = sc.nextLong();
+			int itmValue = sc.nextInt();
 			
 			item.stream()
-			.filter(itm -> itm.getItemId().equals(itmValue))
+			.filter(itm -> itm.getItemId() == itmValue)
 			.findFirst()
 			.ifPresent( itm -> {
 				System.out.println("Please enter the Quantity");
@@ -142,9 +146,9 @@ public class InventoryService {
 	 * @author Santhosh
 	 * @date Aug 15, 2024
 	 */
-	public void getItemByItemid(Long id) {
+	public void getItemByItemid(int id) {
 		item.stream()
-		.filter(itm -> itm.getItemId().equals(id))
+		.filter(itm -> itm.getItemId() == id)
 		.findFirst()
 		.ifPresent( itm -> {
 			System.out.println("Items Value");

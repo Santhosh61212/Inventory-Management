@@ -18,8 +18,8 @@ public class Main {
 			System.out.println(" 4 => getItems");
 			System.out.println(" 5 => getInventory");
 			
-			System.out.println(" 6 => getItemByItemId ");
-			System.out.println(" 7 => getInventoryById ");
+			System.out.println(" 6 => getItemByItemId");
+			System.out.println(" 7 => getInventoryById");
 
 			System.out.println("Enter the value : ");
 			
@@ -43,7 +43,7 @@ public class Main {
 					break;
 				case 6:
 					System.out.println("please enter the Item id");
-					Long itemId = sc.nextLong();
+					int itemId = sc.nextInt();
 					if(itemId>0) {
 						invService.getItemByItemid(itemId);
 					}
